@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import org.graalvm.compiler.phases.common.NodeCounterPhase;
 
-public class ScreensManager implements Screen {
+public class ScreensManager implements Screen    {
 
        private static ScreensManager singleton;
        private Stage stage;
@@ -25,6 +25,8 @@ public class ScreensManager implements Screen {
 
     @Override
     public void show() {
+
+           GAME_SCREEN.show();
 
     }
 
