@@ -7,15 +7,32 @@ import java.util.ArrayList;
 
 public class Battalion {
     private Array<Squadron> squadrons;
+    private int PosY;
 
     public Battalion(Stage baseStage) {
         //Initiate the arraylist
-        squadrons = new Array<Squadron>();
+        squad = new Array<Squadron>();
+        distanceBetweenSquadrons = (settingsManager.Height / 2) / settingsManager.N_SQUADS_PER_BATTALION;
 
 
-        //We have to create all the squadrons
-        for (int i=0;i<4;i++) {
+        //Creamos los escuadrones
+        for (i = 0; i < settingsManager.N_SQUADS_PER_BATTALION; i++) {
+            squadron = new Squadron((short) settingsManager.SCREEN_WIDTH, settingsManager.SCREENHEIGHT - distanceBetweenSquadrons * (i + 1), miDibujoNormal, miDibujoExplosion, miImg2, dibujoDisparoEnemigo);
+            squad .add(squadron);
+        }
+
+        //We have to create the squad
+        for (int i = 0; i < numberOfSquadronForBatallion; i++) {
             Squadron newSquad = new Squadron(baseStage);
         }
+        //PosicionBatallon
+        public void draw(){
+            for(Squadron squadron : squad){
+            squadron.draw(baseStage);
+            }
+        }
+
+
     }
+
 }
