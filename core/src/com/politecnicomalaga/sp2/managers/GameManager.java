@@ -1,7 +1,7 @@
 package com.politecnicomalaga.sp2.managers;
 
 import com.badlogic.gdx.Gdx;
-//No se ha tocado nada en la primera fase
+
 public class GameManager {
     private float gameTime;
     private static GameManager singleton;
