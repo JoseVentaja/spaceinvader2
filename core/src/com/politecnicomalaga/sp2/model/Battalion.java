@@ -2,20 +2,28 @@ package com.politecnicomalaga.sp2.model;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Array;
-
-import java.util.ArrayList;
+import com.politecnicomalaga.sp2.managers.SettingsManager;
 
 public class Battalion {
-    private Array<Squadron> squadrons;
+    private Array<Squadron> battalion;
+    private int distanceBetweenSquadrons;
+    private int posY;
 
     public Battalion(Stage baseStage) {
         //Initiate the arraylist
-        squadrons = new Array<Squadron>();
+        battalion = new Array<Squadron>();
+        distanceBetweenSquadrons = (SettingsManager.SCREEN_HEIGHT / 2) / SettingsManager.N_SQUADS_PER_BATTALION;
+        posY=SettingsManager.SCREEN_HEIGHT-SettingsManager.ENEMY_HEIGHT;
 
 
-        //We have to create all the squadrons
-        for (int i=0;i<4;i++) {
-            Squadron newSquad = new Squadron(baseStage);
+        //Creamos los escuadrones
+        for (int i = 0; i < SettingsManager.N_SQUADS_PER_BATTALION; i++) {
+
+            Squadron squadron = new Squadron(baseStage,posY);
+            posY=posY-distanceBetweenSquadrons;
+            battalion.add(squadron);
         }
     }
+    //PosicionBatallon
+
 }

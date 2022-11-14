@@ -6,22 +6,28 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.politecnicomalaga.sp2.managers.AssetsManager;
 import com.politecnicomalaga.sp2.managers.GameManager;
+import com.politecnicomalaga.sp2.managers.SettingsManager;
 
 public class PlayerSpaceShip extends Actor {
 
-    private Animation<TextureRegion> skin;
+    private final Animation<TextureRegion> skin;
 
     public PlayerSpaceShip() {
         super();
-        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("images/player.pack"));
-        skin = new Animation<TextureRegion>(0.25f, atlas.findRegions("blue"), Animation.PlayMode.LOOP);
+        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
+        skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.SPACESHIP_SPRITES), Animation.PlayMode.LOOP);
+
+        this.setBounds(0, 0,SettingsManager.ALLY_WIDTH,SettingsManager.ALLY_HEIGHT);
+        this.setX(SettingsManager.positionshipX-SettingsManager.ALLY_CENTER);
+        this.setY(SettingsManager.positionshipY);
 
     }
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
         TextureRegion currentFrame = skin.getKeyFrame(GameManager.getSingleton().getGameTime(), true);
-        batch.draw(currentFrame, this.getX(), this.getY());
+        batch.draw(currentFrame, getX(), getY(),SettingsManager.ALLY_WIDTH,SettingsManager.ALLY_HEIGHT);
     }
 }

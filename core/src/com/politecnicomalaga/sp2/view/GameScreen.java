@@ -9,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.politecnicomalaga.sp2.managers.AssetsManager;
+import com.politecnicomalaga.sp2.managers.SettingsManager;
 import com.politecnicomalaga.sp2.model.Battalion;
 import com.politecnicomalaga.sp2.model.PlayerSpaceShip;
 
@@ -21,23 +23,23 @@ public class GameScreen implements Screen {
 
     private Stage stage;
     private Game game;
-
-
+    private Battalion empire;
+    private PlayerSpaceShip heroShip;
     public GameScreen(Game aGame) {
         game = aGame;
-
+        stage = new Stage(new ScreenViewport());
         //Esta orden se puede poner también en el show()
         Gdx.input.setInputProcessor(stage);
 
-        stage = new Stage(new ScreenViewport());
+
 
         //We add the battalion, "the empire"
 
-        Battalion empire = new Battalion(stage);
+        empire = new Battalion(stage);
 
         //We add the main player
-        PlayerSpaceShip heroShip = new PlayerSpaceShip();
-        stage.addActor(heroShip);
+        heroShip = new PlayerSpaceShip();
+
         heroShip.addListener(new InputListener() {
 
             public void clicked(InputEvent event, float x, float y, int pointer, int button) {
@@ -54,9 +56,19 @@ public class GameScreen implements Screen {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
             }
-        });
-        heroShip.setTouchable(Touchable.enabled);
+            @Override
+            public void touchDragged(InputEvent event, float x, float y,int pointer){
+                //if (heroShip.getX()<event.getStageX() && heroShip.getX()+ SettingsManager.ALLY_WIDTH>event.getStageX() && heroShip.getY()<event.getStageY() && heroShip.getY()+SettingsManager.ALLY_HEIGHT>event.getStageY()){}
+                if(event.getStageX()>0 && 1024-SettingsManager.ALLY_WIDTH>event.getStageX()){
+                    heroShip.setX(event.getStageX());
+                }
 
+
+            }
+        });
+
+        heroShip.setTouchable(Touchable.enabled);
+        stage.addActor(heroShip);
     }
 
     @Override
