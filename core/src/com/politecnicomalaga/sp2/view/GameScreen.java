@@ -56,13 +56,17 @@ public class GameScreen implements Screen {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
             }
-            public void touchDragged(InputEvent event, float x, float y){
+            @Override
+            public void touchDragged(InputEvent event, float x, float y,int pointer){
                 //if (heroShip.getX()<event.getStageX() && heroShip.getX()+ SettingsManager.ALLY_WIDTH>event.getStageX() && heroShip.getY()<event.getStageY() && heroShip.getY()+SettingsManager.ALLY_HEIGHT>event.getStageY()){}
+                if(event.getStageX()>0 && 1024-SettingsManager.ALLY_WIDTH>event.getStageX()){
                     heroShip.setX(event.getStageX());
+                }
 
 
             }
         });
+
         heroShip.setTouchable(Touchable.enabled);
         stage.addActor(heroShip);
     }
