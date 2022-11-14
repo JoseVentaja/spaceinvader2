@@ -16,11 +16,11 @@ public class AssetsManager {
     private static Skin textSkin;
 
 
-    public static Skin getTextSkin(){
-        if(textSkin==null){
-            textSkin=new Skin(Gdx.files.internal("glassy-ui.json"));
-        }
-        return textSkin;
-    }
+//    public static Skin getTextSkin(){
+//        if(textSkin==null){
+//            textSkin=new Skin(Gdx.files.internal("glassy-ui.json"));
+//        }
+//        return textSkin;
+//    }
 
 }
