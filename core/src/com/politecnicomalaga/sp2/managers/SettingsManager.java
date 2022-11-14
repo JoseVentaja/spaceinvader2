@@ -15,11 +15,13 @@ public class SettingsManager {
     public static final short ALLY_WIDTH = 60 ;
     public static final short ALLY_HEIGHT = 60 ;
     public static final short ALLY_CENTER = 30 ;
+    public static final short positionshipX = 512 ;
+    public static final short positionshipY = 50;
 
     //Speed
-    public static final float SPEED = 40f ;
+    public static final float SPEED = 3f ;
 
     //Number of enemies
-    public static final short N_ENEMIES_PER_SQUAD = 6 ;
+    public static final short N_ENEMIES_PER_SQUAD = 10 ;
     public static final short N_SQUADS_PER_BATTALION = 4 ;
 }

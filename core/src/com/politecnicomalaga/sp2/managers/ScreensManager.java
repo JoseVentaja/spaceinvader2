@@ -2,23 +2,26 @@ package com.politecnicomalaga.sp2.managers;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.politecnicomalaga.sp2.view.GameScreen;
 
 import org.graalvm.compiler.phases.common.NodeCounterPhase;
 
-public class ScreensManager implements Screen    {
+public class ScreensManager extends ScreenAdapter {
 
        private static ScreensManager singleton;
-       private Stage stage;
        private Screen GAME_SCREEN;
        private Screen GAMEOVER_SCREEN;
-       private static ScreensManager singletone;
+       private Game game;
 
 
-       public ScreensManager(){
-         super();
-       }
+    public static ScreensManager getSingleton() {
+        if (singleton == null) {
+            singleton = new ScreensManager();
+        }
+        return singleton;
+    }
 
 
 
@@ -27,20 +30,7 @@ public class ScreensManager implements Screen    {
 
        }
 
-       public static ScreensManager getSingleton() {
-           if (singleton == null) {
-               singleton = new ScreensManager();
-           }
-           return singleton;
-       }
 
-
-    @Override
-    public void show() {
-
-           GAME_SCREEN.show();
-
-    }
 
 
     public Screen getScreen(Game game, SCREENS screenToGet){
@@ -52,36 +42,6 @@ public class ScreensManager implements Screen    {
                    break;
            }
            return newScreen;
-    }
-
-    @Override
-    public void render(float delta) {
-
-    }
-
-    @Override
-    public void resize(int width, int height) {
-
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void dispose() {
-
     }
 }
 
