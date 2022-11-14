@@ -19,11 +19,15 @@ public class PlayerSpaceShip extends Actor {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
         skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.SPACESHIP_SPRITES), Animation.PlayMode.LOOP);
 
+        this.setBounds(0, 0,SettingsManager.ALLY_WIDTH,SettingsManager.ALLY_HEIGHT);
+        this.setX(SettingsManager.positionshipX-SettingsManager.ALLY_CENTER);
+        this.setY(SettingsManager.positionshipY);
+
     }
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
         TextureRegion currentFrame = skin.getKeyFrame(GameManager.getSingleton().getGameTime(), true);
-        batch.draw(currentFrame, SettingsManager.ALLY_HEIGHT, SettingsManager.ALLY_WIDTH);
+        batch.draw(currentFrame, getX(), getY(),SettingsManager.ALLY_WIDTH,SettingsManager.ALLY_HEIGHT);
     }
 }
