@@ -17,12 +17,13 @@ public class EnemyShip extends Actor {
     public EnemyShip() {
         super();
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
-        skin = new Animation<TextureRegion>(SettingsManager.SPEED, atlas.findRegions(AssetsManager.ENEMY_SPRITES), Animation.PlayMode.LOOP);
+        skin = new Animation<TextureRegion>(SettingsManager.ENEMY_SPEED, atlas.findRegions(AssetsManager.ENEMY_SPRITES), Animation.PlayMode.LOOP);
     }
+
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
         TextureRegion currentFrame = skin.getKeyFrame(GameManager.getSingleton().getGameTime(), true);
-        batch.draw(currentFrame, this.getX(), this.getY(),SettingsManager.ENEMY_WIDTH,SettingsManager.ENEMY_HEIGHT);
+        batch.draw(currentFrame, this.getX(), this.getY(), SettingsManager.ENEMY_WIDTH, SettingsManager.ENEMY_HEIGHT);
     }
 }

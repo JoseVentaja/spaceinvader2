@@ -1,7 +1,7 @@
 package com.politecnicomalaga.sp2.managers;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+
 //No se ha tocado nada en la primera fase
 public class GameManager {
     private float gameTime;
@@ -15,6 +15,10 @@ public class GameManager {
     }
 
     public float getGameTime() {
+        return gameTime;
+    }
+
+    public float additionGameTime() {
         gameTime += Gdx.graphics.getDeltaTime();
         return gameTime;
     }
