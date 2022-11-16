@@ -19,6 +19,14 @@ Lenadro --> GameScreen y GdxSpaceInvaders
 
 -Lunes de la entrega se tiene una extensa reunion para dar las ultimas pinceladas en las que surgen algunas dificultades pero se van solucionando.
 
+15/11/2022
+-Repartición del segundo sprint.
+-Jose Ventaja y Leandro Pagano: EnemyShip, PlayerBullet, PlayerShip. 
+-Javier Botella: LanguageManager.
+-Alvaro algarra y Javier Frochoso: Pantallas y transiciones.
 
-
-
+16/11/2022
+-Creación de la bala e implementación de funcionalidades (Leandro y Ventaja) 
+-Diseño de botones y label del título (Frochoso) 
+-Planteamiento del LanguageManager (Botella) 
+-Inicio desarrollo StartScreen y actualización del ScreenManager (Álvaro)
