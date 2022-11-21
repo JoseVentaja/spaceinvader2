@@ -50,3 +50,17 @@
 - Se progresa fructíferamente
 
 - Leandro investiga como hacer que dispare menos balas
+
+# 18/11/2022
+- Subimos los cambios y hacemos merge a una rama tester
+
+- Empezamos a hacer pruebas y encontramos fallos
+
+# 19/11/2022
+- Descanso
+
+# 20/11/2022
+- Descanso
+
+# 21/11/2022
+-Surgen demasiadas complicaciones, no se pintan las pantallas nuevas
