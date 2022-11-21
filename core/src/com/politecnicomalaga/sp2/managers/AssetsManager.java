@@ -1,5 +1,7 @@
 package com.politecnicomalaga.sp2.managers;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class AssetsManager {
@@ -11,14 +13,23 @@ public class AssetsManager {
     public static final String ALLY_SHOT = "ally_shot";
     public static final String ENEMY_SHOT = "enemy_shot";
     public static final String EXPLOSION_SPRITES = "explosion";
-    public static final String ATLAS_FILE = "sp2.atlas";
+    public static final String BUTTON="button";
+    public static final String TITLE_LABEL="SPLabel";
+    public static final String ATLAS_FILE = "images/assets.atlas";
+    public static final String NOMBRE1 = "nombre1";
+    public static final String NOMBRE2 = "nombre2";
+    public static final String NOMBRE3 = "nombre3";
+    public static final String NOMBRE4 = "nombre4";
+    public static final String NOMBRE5 = "nombre5";
     private static Skin textSkin;
 
-//    public static Skin getTextSkin(){
-//        if(textSkin==null){
-//            textSkin=new Skin(Gdx.files.internal("glassy-ui.json"));
-//        }
-//        return textSkin;
-//    }
+
+
+    public static Skin getTextSkin(){
+        if(textSkin==null){
+                textSkin=new Skin();
+        }
+        return textSkin;
+    }
 
 }
