@@ -17,6 +17,7 @@ public class LanguageManager {
     public static final int SETTINGS = 7;
 
     public enum lang {SPANISH, ENGLISH}
+
     private lang myLangs;
 
     public LanguageManager() {
@@ -34,14 +35,14 @@ public class LanguageManager {
         return enUso[n];
     }
 
-    public void setString() {
+    public void setString(lang myLangs) {
         switch (myLangs) {
             case SPANISH:
                 enUso = aSPANISH;
-            break;
+                break;
             case ENGLISH:
                 enUso = aENGLISH;
-            break;
+                break;
         }
     }
 }

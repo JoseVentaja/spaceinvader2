@@ -3,15 +3,12 @@ package com.politecnicomalaga.sp2.view;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -22,10 +19,11 @@ import com.politecnicomalaga.sp2.managers.ScreensManager;
 import sun.net.ResourceManager;
 
 public class SettingsScreen implements Screen {
-    private Stage stage;
-    private Game game;
+    private final Stage stage;
+    private final Game game;
 
     private ResourceManager rm;
+
     public SettingsScreen(final Game aGame) {
         game = aGame;
 
@@ -41,51 +39,55 @@ public class SettingsScreen implements Screen {
         stage.addActor(titulo);
 
         //Botón español
-        TextButton SpanishButton =new TextButton((LanguageManager.getSingleton().getString(LanguageManager.SPANISH_BUTTON)),AssetsManager.getTextSkin(),AssetsManager.BUTTON);
-        SpanishButton.setWidth(Gdx.graphics.getWidth()/2);
-        SpanishButton.setPosition(Gdx.graphics.getWidth()/2-SpanishButton.getWidth()/2,Gdx.graphics.getHeight()-SpanishButton.getHeight()*4);
-        SpanishButton.addListener(new InputListener(){
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+        TextButton SpanishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.SPANISH_BUTTON)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        SpanishButton.setWidth(Gdx.graphics.getWidth() / 2);
+        SpanishButton.setPosition(Gdx.graphics.getWidth() / 2 - SpanishButton.getWidth() / 2, Gdx.graphics.getHeight() - SpanishButton.getHeight() * 4);
+        SpanishButton.addListener(new InputListener() {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.SPANISH);
             }
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
         stage.addActor(SpanishButton);
 
         //Botón inglés
-        TextButton EnglishButton =new TextButton((LanguageManager.getSingleton().getString(LanguageManager.ENGLISH_BUTTON)),AssetsManager.getTextSkin(),AssetsManager.BUTTON);
-        EnglishButton.setWidth(Gdx.graphics.getWidth()/2);
-        EnglishButton.setPosition(Gdx.graphics.getWidth()/2-EnglishButton.getWidth()/2,Gdx.graphics.getHeight()-EnglishButton.getHeight()*6);
-        EnglishButton.addListener(new InputListener(){
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+        TextButton EnglishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.ENGLISH_BUTTON)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        EnglishButton.setWidth(Gdx.graphics.getWidth() / 2);
+        EnglishButton.setPosition(Gdx.graphics.getWidth() / 2 - EnglishButton.getWidth() / 2, Gdx.graphics.getHeight() - EnglishButton.getHeight() * 6);
+        EnglishButton.addListener(new InputListener() {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.ENGLISH);
             }
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
         stage.addActor(EnglishButton);
 
         //Botón volver
-        TextButton ReturnButton =new TextButton((LanguageManager.getSingleton().getString(LanguageManager.GO_BACK)),AssetsManager.getTextSkin(),AssetsManager.BUTTON);
-        ReturnButton.setWidth(Gdx.graphics.getWidth()/2);
-        ReturnButton.setPosition(Gdx.graphics.getWidth()/2-ReturnButton.getWidth()/2,Gdx.graphics.getHeight()-ReturnButton.getHeight()*8);
-        ReturnButton.addListener(new InputListener(){
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
-               game.setScreen(ScreensManager.getSingleton().getScreen(game,ScreensManager.SCREENS.START_SCREEN));
+        TextButton ReturnButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.GO_BACK)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        ReturnButton.setWidth(Gdx.graphics.getWidth() / 2);
+        ReturnButton.setPosition(Gdx.graphics.getWidth() / 2 - ReturnButton.getWidth() / 2, Gdx.graphics.getHeight() - ReturnButton.getHeight() * 8);
+        ReturnButton.addListener(new InputListener() {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
             }
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
         stage.addActor(EnglishButton);
 
     }
+
     @Override
     public void show() {
-    Gdx.app.log("StartScreen","show");
+        Gdx.app.log("StartScreen", "show");
     }
 
     @Override
@@ -117,6 +119,6 @@ public class SettingsScreen implements Screen {
 
     @Override
     public void dispose() {
-    stage.dispose();
+        stage.dispose();
     }
 }

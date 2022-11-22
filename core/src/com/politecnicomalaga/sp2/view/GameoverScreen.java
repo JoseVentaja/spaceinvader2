@@ -17,11 +17,12 @@ import com.politecnicomalaga.sp2.managers.LanguageManager;
 import com.politecnicomalaga.sp2.managers.ScreensManager;
 
 public class GameoverScreen implements Screen {
-private Stage stage;
-private Game game;
-    public GameoverScreen(final Game aGame){
-        game=aGame;
-        stage=new Stage(new ScreenViewport());
+    private final Stage stage;
+    private final Game game;
+
+    public GameoverScreen(final Game aGame) {
+        game = aGame;
+        stage = new Stage(new ScreenViewport());
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
         Gdx.input.setInputProcessor(stage);
 
@@ -33,35 +34,34 @@ private Game game;
         stage.addActor(titulo);
 
         //Botón reintentar
-        TextButton RetryButton =new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)),AssetsManager.getTextSkin(),AssetsManager.BUTTON);
-        RetryButton.setWidth(Gdx.graphics.getWidth()/2);
-        RetryButton.setPosition(Gdx.graphics.getWidth()/2-RetryButton.getWidth()/2,Gdx.graphics.getHeight()-RetryButton.getHeight()*4);
-        RetryButton.addListener(new InputListener(){
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
-                game.setScreen(ScreensManager.getSingleton().getScreen(game,ScreensManager.SCREENS.GAME_SCREEN));
+        TextButton RetryButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        RetryButton.setWidth(Gdx.graphics.getWidth() / 2);
+        RetryButton.setPosition(Gdx.graphics.getWidth() / 2 - RetryButton.getWidth() / 2, Gdx.graphics.getHeight() - RetryButton.getHeight() * 4);
+        RetryButton.addListener(new InputListener() {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.GAME_SCREEN));
             }
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
         stage.addActor(RetryButton);
 
         //Botón salir
-        TextButton ExitButton =new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)),AssetsManager.getTextSkin(),AssetsManager.BUTTON);
-        ExitButton.setWidth(Gdx.graphics.getWidth()/2);
-        ExitButton.setPosition(Gdx.graphics.getWidth()/2-ExitButton.getWidth()/2,Gdx.graphics.getHeight()-ExitButton.getHeight()*6);
-        ExitButton.addListener(new InputListener(){
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+        TextButton ExitButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        ExitButton.setWidth(Gdx.graphics.getWidth() / 2);
+        ExitButton.setPosition(Gdx.graphics.getWidth() / 2 - ExitButton.getWidth() / 2, Gdx.graphics.getHeight() - ExitButton.getHeight() * 6);
+        ExitButton.addListener(new InputListener() {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 System.exit(0);
             }
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
         stage.addActor(ExitButton);
-
-
-
     }
 
     @Override

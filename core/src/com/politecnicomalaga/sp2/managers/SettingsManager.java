@@ -25,7 +25,7 @@ public class SettingsManager {
     //Number of enemies
     public static final short N_ENEMIES_PER_SQUAD = 10;
     public static final short N_SQUADS_PER_BATTALION = 4;
-    
+
     public static final short sizeBulletWIDTH = 10;
     public static final short sizeBulletHEIGHT = 20;
     public static final short allyBulletCenter = 5;

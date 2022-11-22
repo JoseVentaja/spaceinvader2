@@ -3,16 +3,15 @@ package com.politecnicomalaga.sp2.managers;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
-import com.politecnicomalaga.sp2.model.GameOver;
-import com.politecnicomalaga.sp2.model.SettingScreen;
 import com.politecnicomalaga.sp2.view.CreditScreen;
 import com.politecnicomalaga.sp2.view.GameScreen;
+import com.politecnicomalaga.sp2.view.GameoverScreen;
+import com.politecnicomalaga.sp2.view.SettingsScreen;
 import com.politecnicomalaga.sp2.view.StartScreen;
 
 public class ScreensManager extends ScreenAdapter {
 
     private static ScreensManager singleton;
-
     private Game game;
 
     public static ScreensManager getSingleton() {
@@ -23,7 +22,7 @@ public class ScreensManager extends ScreenAdapter {
     }
 
     public enum SCREENS {
-        GAME_SCREEN, GAMEOVER_SCREEN ,SETTINGS_SCREEN,CREDITS_SCREEN,START_SCREEN
+        GAME_SCREEN, GAMEOVER_SCREEN, SETTINGS_SCREEN, CREDITS_SCREEN, START_SCREEN
     }
 
     public Screen getScreen(Game game, SCREENS screenToGet) {
@@ -33,10 +32,10 @@ public class ScreensManager extends ScreenAdapter {
                 newScreen = new GameScreen(game);
                 break;
             case GAMEOVER_SCREEN:
-                newScreen = new GameOver(game);
+                newScreen = new GameoverScreen(game);
                 break;
             case SETTINGS_SCREEN:
-                newScreen = new SettingScreen(game);
+                newScreen = new SettingsScreen(game);
                 break;
             case CREDITS_SCREEN:
                 newScreen = new CreditScreen(game);

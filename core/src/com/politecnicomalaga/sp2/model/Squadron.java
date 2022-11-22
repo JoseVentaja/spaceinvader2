@@ -6,8 +6,9 @@ import com.politecnicomalaga.sp2.managers.SettingsManager;
 
 public class Squadron {
 
-    private Array<EnemyShip> troops;
-    private int posX,additionPosX;
+    private final Array<EnemyShip> troops;
+    private int posX;
+    private final int additionPosX;
 
     public Squadron(Stage baseStage, int posy) {
         //Initiate the arraylist
@@ -26,7 +27,4 @@ public class Squadron {
             troops.add(newEnemy);
         }
     }
-
-
-
 }
