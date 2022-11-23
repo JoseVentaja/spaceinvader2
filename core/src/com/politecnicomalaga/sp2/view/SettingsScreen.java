@@ -45,6 +45,7 @@ public class SettingsScreen implements Screen {
         SpanishButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.SPANISH);
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
             }
 
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
@@ -60,6 +61,7 @@ public class SettingsScreen implements Screen {
         EnglishButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.ENGLISH);
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
             }
 
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
