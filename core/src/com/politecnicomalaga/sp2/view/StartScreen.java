@@ -4,14 +4,11 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.politecnicomalaga.sp2.managers.AssetsManager;
@@ -33,21 +30,20 @@ public class StartScreen implements Screen {
 //         TextButton.TextButtonStyle buttonStyle = skin.get("bigButton", TextButton.TextButtonStyle.class);
 //         TextButton button = new TextButton("Click me!", buttonStyle);
 
-
 //-------------------------------------------------------------------------------------------------------------------------//
-        Label title = new Label(AssetsManager.TITLE_LABEL, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
+
+        Label title = new Label(AssetsManager.TITLE_LABEL, AssetsManager.getTextSkin(), AssetsManager.BIG_FONT);
         title.setAlignment(Align.center);
         title.setY(Gdx.graphics.getHeight() - title.getHeight() * 2);
         title.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(title);
+
 //-------------------------------------------------------------------------------------------------------------------------//
 
         TextButton StartButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.START), AssetsManager.getTextSkin());
         StartButton.setWidth(Gdx.graphics.getWidth() / 2);
         StartButton.setPosition(Gdx.graphics.getWidth() / 2 - StartButton.getWidth() / 2, Gdx.graphics.getHeight() - StartButton.getHeight() * 3);
-
-
         StartButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
@@ -66,21 +62,17 @@ public class StartScreen implements Screen {
         TextButton settingsButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS), AssetsManager.getTextSkin());
         settingsButton.setWidth(Gdx.graphics.getWidth() / 2);
         settingsButton.setPosition(Gdx.graphics.getWidth() / 2 - settingsButton.getWidth() / 2, Gdx.graphics.getHeight() - settingsButton.getHeight() * 4.5f);
-
         settingsButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-
                 game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.SETTINGS_SCREEN));
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-
                 return true;
             }
         });
-
         stage.addActor(settingsButton);
 
         //-------------------------------------------------------------------------------------------------------------------------//
@@ -88,17 +80,14 @@ public class StartScreen implements Screen {
         TextButton CreditButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.CREDITS), AssetsManager.getTextSkin());
         CreditButton.setWidth(Gdx.graphics.getWidth() / 2);
         CreditButton.setPosition(Gdx.graphics.getWidth() / 2 - CreditButton.getWidth() / 2, Gdx.graphics.getHeight() - CreditButton.getHeight() * 6);
-
         CreditButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-
                 game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.CREDITS_SCREEN));
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-
                 return true;
             }
         });
@@ -113,7 +102,6 @@ public class StartScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();

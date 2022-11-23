@@ -32,7 +32,7 @@ public class SettingsScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
 
         //Título
-        Label titulo = new Label(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS),AssetsManager.getTextSkin(), AssetsManager.BIG_FONT);
+        Label titulo = new Label(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS), AssetsManager.getTextSkin(), AssetsManager.BIG_FONT);
         titulo.setAlignment(Align.center);
         titulo.setY(Gdx.graphics.getHeight() - titulo.getHeight() * 2);
         titulo.setWidth(Gdx.graphics.getWidth());
@@ -61,7 +61,7 @@ public class SettingsScreen implements Screen {
         EnglishButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.ENGLISH);
-                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.SETTINGS_SCREEN));
             }
 
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
@@ -76,7 +76,7 @@ public class SettingsScreen implements Screen {
         ReturnButton.setPosition(Gdx.graphics.getWidth() / 2 - ReturnButton.getWidth() / 2, Gdx.graphics.getHeight() - ReturnButton.getHeight() * 8);
         ReturnButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.SETTINGS_SCREEN));
             }
 
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
