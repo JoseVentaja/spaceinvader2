@@ -17,7 +17,7 @@ public class Bullet extends Actor {
     public Bullet(float positionX, float positionY) {
         super();
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
-        skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.ENEMY_SHOT), Animation.PlayMode.LOOP);
+        skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.ALLY_SHOT), Animation.PlayMode.LOOP);
         this.setBounds(0, 0, SettingsManager.sizeBulletWIDTH, SettingsManager.sizeBulletHEIGHT);
         this.setX(positionX);
         this.setY(positionY);

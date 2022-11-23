@@ -3,7 +3,7 @@ package com.politecnicomalaga.sp2.managers;
 public class LanguageManager {
 
     private String[] enUso;
-    private final String[] aSPANISH = {"Seleccionar idioma", "Español", "Inglés", "Volver", "Guardar Configuración", "Empezar", "Creditos", "Ajustes"};
+    private final String[] aSPANISH = {"Seleccionar idioma", "Espanol", "Ingles", "Volver", "Guardar Configuracion", "Empezar", "Creditos", "Ajustes"};
     private final String[] aENGLISH = {"Choose language", "Spanish", "English", "Back", "Save Changes", "Start", "Credits", "Settings"};
 
     private static LanguageManager singleton;

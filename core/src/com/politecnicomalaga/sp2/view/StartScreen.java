@@ -35,17 +35,17 @@ public class StartScreen implements Screen {
 
 
 //-------------------------------------------------------------------------------------------------------------------------//
-        Label title = new Label("SPACEINVADER", AssetsManager.getTextSkin(), AssetsManager.TITLE_LABEL);
+        Label title = new Label(AssetsManager.TITLE_LABEL, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
         title.setAlignment(Align.center);
         title.setY(Gdx.graphics.getHeight() - title.getHeight() * 2);
         title.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(title);
 //-------------------------------------------------------------------------------------------------------------------------//
-        SpriteDrawable up = new SpriteDrawable(new Sprite(new Texture(AssetsManager.BUTTON)));
-        TextButton StartButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.START), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+
+        TextButton StartButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.START), AssetsManager.getTextSkin());
         StartButton.setWidth(Gdx.graphics.getWidth() / 2);
-        StartButton.setPosition(Gdx.graphics.getWidth() / 2 - StartButton.getWidth() / 2, Gdx.graphics.getHeight() - StartButton.getHeight() * 4);
+        StartButton.setPosition(Gdx.graphics.getWidth() / 2 - StartButton.getWidth() / 2, Gdx.graphics.getHeight() - StartButton.getHeight() * 3);
 
 
         StartButton.addListener(new InputListener() {
@@ -63,9 +63,9 @@ public class StartScreen implements Screen {
 
         //-------------------------------------------------------------------------------------------------------------------------//
 
-        TextButton settingsButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton settingsButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS), AssetsManager.getTextSkin());
         settingsButton.setWidth(Gdx.graphics.getWidth() / 2);
-        settingsButton.setPosition(Gdx.graphics.getWidth() / 2 - settingsButton.getWidth() / 2, Gdx.graphics.getHeight() - settingsButton.getHeight() * 6);
+        settingsButton.setPosition(Gdx.graphics.getWidth() / 2 - settingsButton.getWidth() / 2, Gdx.graphics.getHeight() - settingsButton.getHeight() * 4.5f);
 
         settingsButton.addListener(new InputListener() {
             @Override
@@ -85,9 +85,9 @@ public class StartScreen implements Screen {
 
         //-------------------------------------------------------------------------------------------------------------------------//
 
-        TextButton CreditButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.CREDITS), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton CreditButton = new TextButton(LanguageManager.getSingleton().getString(LanguageManager.CREDITS), AssetsManager.getTextSkin());
         CreditButton.setWidth(Gdx.graphics.getWidth() / 2);
-        CreditButton.setPosition(Gdx.graphics.getWidth() / 2 - CreditButton.getWidth() / 2, Gdx.graphics.getHeight() - CreditButton.getHeight() * 8);
+        CreditButton.setPosition(Gdx.graphics.getWidth() / 2 - CreditButton.getWidth() / 2, Gdx.graphics.getHeight() - CreditButton.getHeight() * 6);
 
         CreditButton.addListener(new InputListener() {
             @Override

@@ -32,14 +32,14 @@ public class SettingsScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
 
         //Título
-        Label titulo = new Label(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS), AssetsManager.getTextSkin(), "Big Black");
+        Label titulo = new Label(LanguageManager.getSingleton().getString(LanguageManager.SETTINGS),AssetsManager.getTextSkin(), AssetsManager.BIG_FONT);
         titulo.setAlignment(Align.center);
         titulo.setY(Gdx.graphics.getHeight() - titulo.getHeight() * 2);
         titulo.setWidth(Gdx.graphics.getWidth());
         stage.addActor(titulo);
 
         //Botón español
-        TextButton SpanishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.SPANISH_BUTTON)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton SpanishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.SPANISH_BUTTON)), AssetsManager.getTextSkin());
         SpanishButton.setWidth(Gdx.graphics.getWidth() / 2);
         SpanishButton.setPosition(Gdx.graphics.getWidth() / 2 - SpanishButton.getWidth() / 2, Gdx.graphics.getHeight() - SpanishButton.getHeight() * 4);
         SpanishButton.addListener(new InputListener() {
@@ -54,7 +54,7 @@ public class SettingsScreen implements Screen {
         stage.addActor(SpanishButton);
 
         //Botón inglés
-        TextButton EnglishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.ENGLISH_BUTTON)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton EnglishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.ENGLISH_BUTTON)), AssetsManager.getTextSkin());
         EnglishButton.setWidth(Gdx.graphics.getWidth() / 2);
         EnglishButton.setPosition(Gdx.graphics.getWidth() / 2 - EnglishButton.getWidth() / 2, Gdx.graphics.getHeight() - EnglishButton.getHeight() * 6);
         EnglishButton.addListener(new InputListener() {
@@ -69,7 +69,7 @@ public class SettingsScreen implements Screen {
         stage.addActor(EnglishButton);
 
         //Botón volver
-        TextButton ReturnButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.GO_BACK)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton ReturnButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.GO_BACK)), AssetsManager.getTextSkin());
         ReturnButton.setWidth(Gdx.graphics.getWidth() / 2);
         ReturnButton.setPosition(Gdx.graphics.getWidth() / 2 - ReturnButton.getWidth() / 2, Gdx.graphics.getHeight() - ReturnButton.getHeight() * 8);
         ReturnButton.addListener(new InputListener() {

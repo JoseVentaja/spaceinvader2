@@ -22,17 +22,17 @@ public class CreditScreen implements Screen {
 
         Gdx.input.setInputProcessor(stage);
 
-        Label nombre1 = new Label("", AssetsManager.getTextSkin(), AssetsManager.NOMBRE1);
+        Label nombre1 = new Label(AssetsManager.NOMBRE3, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
         nombre1.setAlignment(Align.center);
-        nombre1.setY(Gdx.graphics.getHeight() - nombre1.getHeight() * 2);
+        nombre1.setY(Gdx.graphics.getHeight() - nombre1.getHeight() * 3);
         nombre1.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(nombre1);
         //-------------------------------------------------------------------------------------------------------------------------//
 
-        Label nombre2 = new Label("", AssetsManager.getTextSkin(), AssetsManager.NOMBRE2);
+        Label nombre2 = new Label(AssetsManager.NOMBRE2, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
         nombre2.setAlignment(Align.center);
-        nombre2.setY(Gdx.graphics.getHeight() - nombre2.getHeight() * 4);
+        nombre2.setY(Gdx.graphics.getHeight() - nombre2.getHeight() * 4.5f);
         nombre2.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(nombre2);
@@ -40,7 +40,7 @@ public class CreditScreen implements Screen {
         //-------------------------------------------------------------------------------------------------------------------------//
 
 
-        Label nombre3 = new Label("", AssetsManager.getTextSkin(), AssetsManager.NOMBRE3);
+        Label nombre3 = new Label(AssetsManager.NOMBRE4, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
         nombre3.setAlignment(Align.center);
         nombre3.setY(Gdx.graphics.getHeight() - nombre3.getHeight() * 6);
         nombre3.setWidth(Gdx.graphics.getWidth());
@@ -50,18 +50,19 @@ public class CreditScreen implements Screen {
         //-------------------------------------------------------------------------------------------------------------------------//
 
 
-        Label nombre4 = new Label("", AssetsManager.getTextSkin(), AssetsManager.NOMBRE4);
-        nombre3.setAlignment(Align.center);
-        nombre3.setY(Gdx.graphics.getHeight() - nombre3.getHeight() * 8);
-        nombre3.setWidth(Gdx.graphics.getWidth());
+
+        Label nombre4 = new Label(AssetsManager.NOMBRE5, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
+        nombre4.setAlignment(Align.center);
+        nombre4.setY(Gdx.graphics.getHeight() - nombre4.getHeight() * 7.5f);
+        nombre4.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(nombre4);
 
         //-------------------------------------------------------------------------------------------------------------------------//
 
-        Label nombre5 = new Label("", AssetsManager.getTextSkin(), AssetsManager.NOMBRE5);
+        Label nombre5 = new Label(AssetsManager.NOMBRE1, AssetsManager.getTextSkin(),AssetsManager.BIG_FONT);
         nombre5.setAlignment(Align.center);
-        nombre5.setY(Gdx.graphics.getHeight() - nombre5.getHeight() * 10);
+        nombre5.setY(Gdx.graphics.getHeight() - nombre5.getHeight() * 9);
         nombre5.setWidth(Gdx.graphics.getWidth());
 
         stage.addActor(nombre5);
