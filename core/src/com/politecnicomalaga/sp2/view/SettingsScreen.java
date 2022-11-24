@@ -41,7 +41,7 @@ public class SettingsScreen implements Screen {
         //Botón español
         TextButton SpanishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.SPANISH_BUTTON)), AssetsManager.getTextSkin());
         SpanishButton.setWidth(Gdx.graphics.getWidth() / 2);
-        SpanishButton.setPosition(Gdx.graphics.getWidth() / 2 - SpanishButton.getWidth() / 2, Gdx.graphics.getHeight() - SpanishButton.getHeight() * 4);
+        SpanishButton.setPosition(Gdx.graphics.getWidth() / 2 - SpanishButton.getWidth() / 2, Gdx.graphics.getHeight() - SpanishButton.getHeight() * 3);
         SpanishButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.SPANISH);
@@ -57,7 +57,7 @@ public class SettingsScreen implements Screen {
         //Botón inglés
         TextButton EnglishButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.ENGLISH_BUTTON)), AssetsManager.getTextSkin());
         EnglishButton.setWidth(Gdx.graphics.getWidth() / 2);
-        EnglishButton.setPosition(Gdx.graphics.getWidth() / 2 - EnglishButton.getWidth() / 2, Gdx.graphics.getHeight() - EnglishButton.getHeight() * 6);
+        EnglishButton.setPosition(Gdx.graphics.getWidth() / 2 - EnglishButton.getWidth() / 2, Gdx.graphics.getHeight() - EnglishButton.getHeight() * 4.5f);
         EnglishButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 LanguageManager.getSingleton().setString(LanguageManager.lang.ENGLISH);
@@ -73,17 +73,17 @@ public class SettingsScreen implements Screen {
         //Botón volver
         TextButton ReturnButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.GO_BACK)), AssetsManager.getTextSkin());
         ReturnButton.setWidth(Gdx.graphics.getWidth() / 2);
-        ReturnButton.setPosition(Gdx.graphics.getWidth() / 2 - ReturnButton.getWidth() / 2, Gdx.graphics.getHeight() - ReturnButton.getHeight() * 8);
+        ReturnButton.setPosition(Gdx.graphics.getWidth() / 2 - ReturnButton.getWidth() / 2, Gdx.graphics.getHeight() - ReturnButton.getHeight() * 6);
         ReturnButton.addListener(new InputListener() {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.SETTINGS_SCREEN));
+                game.setScreen(ScreensManager.getSingleton().getScreen(game, ScreensManager.SCREENS.START_SCREEN));
             }
 
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 return true;
             }
         });
-        stage.addActor(EnglishButton);
+        stage.addActor(ReturnButton);
 
     }
 
