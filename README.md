@@ -14,7 +14,7 @@
 
 - Jose Ventaja entrega Battalion y Scuadron.
 
-- Leandro entrega  GameScreen y GdxSpaceInvader.
+- Leandro entrega GameScreen y GdxSpaceInvader.
 
 - Javier termina su parte y se sube todo.
 
@@ -24,7 +24,7 @@
 
 - Lunes de la entrega se tiene una extensa reunion para dar las ultimas pinceladas en las que surgen algunas dificultades pero se van solucionando.
 
-------------------------------------o------------------------------------o------------------------------------o------------------------------------
+o------------------------------------o------------------------------------o------------------------------------o
 
 # 15/11/2022
 - Repartición del segundo sprint.
@@ -33,7 +33,7 @@
 
 - Javier Botella: LanguageManager
 
-- Alvaro algarra y Javier Frochoso: Pantallas y transiciones
+- Alvaro Algarra y Javier Frochoso: Pantallas y transiciones
 
 # 16/11/2022
 - Creación de la bala e implementación de funcionalidades (Leandro y Ventaja)
@@ -70,3 +70,14 @@
 
 # 23/11/2022
 - Se prueba todo y se sube al main
+
+o------------------------------------o------------------------------------o------------------------------------o
+
+# 24/11/2022
+- Repartición del tercer sprint.
+
+- Jose Ventaja y Leandro Pagano: EnemyBullet y Colisiones
+
+- Javier Botella y Javier Frochoso: Musica
+
+- Alvaro Algarra: Pantallas
