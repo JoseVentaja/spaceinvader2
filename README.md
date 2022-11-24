@@ -63,4 +63,10 @@
 - Descanso
 
 # 21/11/2022
--Surgen demasiadas complicaciones, no se pintan las pantallas nuevas
+- Surgen demasiadas complicaciones, no se pintan las pantallas nuevas
+
+# 22/11/2022
+- Se arreglan las complicaciones, ya se pintan las pantallas
+
+# 23/11/2022
+- Se prueba todo y se sube al main
