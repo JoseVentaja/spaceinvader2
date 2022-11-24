@@ -27,14 +27,14 @@ public class GameoverScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
 
         //Título
-        Label titulo = new Label("Game Over", AssetsManager.getTextSkin(), "Big Black");
+        Label titulo = new Label("Game Over", AssetsManager.getTextSkin(), AssetsManager.BIG_FONT);
         titulo.setAlignment(Align.center);
         titulo.setY(Gdx.graphics.getHeight() - titulo.getHeight() * 2);
         titulo.setWidth(Gdx.graphics.getWidth());
         stage.addActor(titulo);
 
         //Botón reintentar
-        TextButton RetryButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton RetryButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin());
         RetryButton.setWidth(Gdx.graphics.getWidth() / 2);
         RetryButton.setPosition(Gdx.graphics.getWidth() / 2 - RetryButton.getWidth() / 2, Gdx.graphics.getHeight() - RetryButton.getHeight() * 4);
         RetryButton.addListener(new InputListener() {
@@ -49,7 +49,7 @@ public class GameoverScreen implements Screen {
         stage.addActor(RetryButton);
 
         //Botón salir
-        TextButton ExitButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin(), AssetsManager.BUTTON);
+        TextButton ExitButton = new TextButton((LanguageManager.getSingleton().getString(LanguageManager.START)), AssetsManager.getTextSkin());
         ExitButton.setWidth(Gdx.graphics.getWidth() / 2);
         ExitButton.setPosition(Gdx.graphics.getWidth() / 2 - ExitButton.getWidth() / 2, Gdx.graphics.getHeight() - ExitButton.getHeight() * 6);
         ExitButton.addListener(new InputListener() {
