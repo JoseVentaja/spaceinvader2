@@ -21,7 +21,7 @@ public class GdxSpaceInvaders2 extends Game {
         batch = new SpriteBatch();
         myScreenManager = ScreensManager.getSingleton();
         myGame = GameManager.getSingleton();
-        myScreen = myScreenManager.getScreen(this, ScreensManager.SCREENS.GAME_SCREEN);
+        myScreen = myScreenManager.getScreen(this, ScreensManager.SCREENS.START_SCREEN);
         this.setScreen(myScreen);
         camera = new OrthographicCamera();
         camera.setToOrtho(false, SettingsManager.SCREEN_WIDTH, SettingsManager.SCREEN_HEIGHT);

@@ -1,0 +1,216 @@
+
+assets.png
+size: 2048, 1024
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+SPLabel
+  rotate: false
+  xy: 578, 216
+  size: 477, 333
+  orig: 500, 333
+  offset: 10, 0
+  index: -1
+button
+  rotate: false
+  xy: 2, 285
+  size: 574, 264
+  orig: 627, 264
+  offset: 26, 0
+  index: -1
+disparo_aliado
+  rotate: false
+  xy: 1172, 658
+  size: 8, 20
+  orig: 8, 20
+  offset: 0, 0
+  index: -1
+disparo_enemigo
+  rotate: false
+  xy: 508, 271
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+enemy
+  rotate: false
+  xy: 1413, 792
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 1
+enemy
+  rotate: false
+  xy: 1057, 329
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 2
+enemy
+  rotate: false
+  xy: 2, 63
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 3
+enemy
+  rotate: false
+  xy: 1057, 107
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 4
+enemy
+  rotate: false
+  xy: 224, 63
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 5
+enemy
+  rotate: false
+  xy: 1635, 792
+  size: 220, 220
+  orig: 220, 220
+  offset: 0, 0
+  index: 6
+explosion
+  rotate: false
+  xy: 446, 182
+  size: 28, 40
+  orig: 44, 40
+  offset: 7, 0
+  index: 2
+explosion
+  rotate: false
+  xy: 446, 182
+  size: 28, 40
+  orig: 44, 40
+  offset: 7, 0
+  index: 6
+explosion
+  rotate: false
+  xy: 1234, 699
+  size: 44, 40
+  orig: 44, 40
+  offset: 0, 0
+  index: 4
+explosion
+  rotate: false
+  xy: 64, 21
+  size: 35, 40
+  orig: 44, 40
+  offset: 4, 0
+  index: 5
+explosion
+  rotate: false
+  xy: 64, 21
+  size: 35, 40
+  orig: 44, 40
+  offset: 4, 0
+  index: 3
+explosion
+  rotate: false
+  xy: 1283, 795
+  size: 15, 40
+  orig: 44, 40
+  offset: 13, 0
+  index: 7
+explosion
+  rotate: false
+  xy: 1283, 795
+  size: 15, 40
+  orig: 44, 40
+  offset: 13, 0
+  index: 1
+nombre1
+  rotate: false
+  xy: 2, 837
+  size: 1308, 89
+  orig: 1308, 89
+  offset: 0, 0
+  index: -1
+nombre2
+  rotate: false
+  xy: 2, 741
+  size: 1279, 94
+  orig: 1279, 94
+  offset: 0, 0
+  index: -1
+nombre3
+  rotate: false
+  xy: 2, 642
+  size: 1168, 97
+  orig: 1168, 97
+  offset: 0, 0
+  index: -1
+nombre4
+  rotate: false
+  xy: 2, 551
+  size: 1174, 89
+  orig: 1174, 89
+  offset: 0, 0
+  index: -1
+nombre5
+  rotate: false
+  xy: 2, 928
+  size: 1409, 84
+  orig: 1409, 84
+  offset: 0, 0
+  index: -1
+player
+  rotate: false
+  xy: 1857, 953
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 1
+player
+  rotate: false
+  xy: 1312, 867
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 4
+player
+  rotate: false
+  xy: 1312, 867
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 6
+player
+  rotate: false
+  xy: 2, 2
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 5
+player
+  rotate: false
+  xy: 446, 224
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 7
+player
+  rotate: false
+  xy: 446, 224
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 3
+player
+  rotate: false
+  xy: 1172, 680
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 8
+player
+  rotate: false
+  xy: 1172, 680
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: 2

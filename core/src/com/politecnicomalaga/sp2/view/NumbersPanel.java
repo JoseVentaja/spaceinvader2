@@ -21,14 +21,11 @@ public class NumbersPanel {
     /////////////////////////////////////////////////////////////////////////////////////
 
 
-
     //Almacenaremos números de base en un array list "digitos"
     protected Array<Texture> numberList;
 
-
     //Almacenaremos los números necesarios para pintar el número asignado en otro arraylist
     protected Array<Texture> showedList;
-
 
     protected float fPosX;
     protected float fPosY;
@@ -41,7 +38,6 @@ public class NumbersPanel {
     //
     /////////////////////////////////////////////////////////////////////////////////////
 
-
     //CONSTRUCTORES
     public NumbersPanel(float pX, float pY, float nWidth) {
         fPosX = pX;
@@ -50,8 +46,8 @@ public class NumbersPanel {
 
         //creamos el array de base y el array a pintar (con el 0)
         numberList = new Array<Texture>();
-        for (int i = 0;i<10;i++) {
-            Texture newDigit = new Texture(  AssetsManager.NUMBERS_SPRITES + String.valueOf(i) + AssetsManager.NUMBERS_EXT_SPRITES);
+        for (int i = 0; i < 10; i++) {
+            Texture newDigit = new Texture(AssetsManager.NUMBERS_SPRITES + i + AssetsManager.NUMBERS_EXT_SPRITES);
             numberList.add(newDigit);
         }
 
@@ -65,24 +61,22 @@ public class NumbersPanel {
 
     //Método pintarse
     public void render(SpriteBatch miSB) {
-        float pX,pY;
+        float pX, pY;
         pX = fPosX;
         pY = fPosY;
         for (Texture digit : showedList) {
-            miSB.draw(digit,pX,pY, fWidth, fWidth);
+            miSB.draw(digit, pX, pY, fWidth, fWidth);
             pX += fWidth;
         }
-
     }
 
     //Asignar el número:
     public void setData(int iValue) {
-
         if (iValue > 0) {
             iStoredValue = iValue;
             showedList.clear();
             String sNumber = String.valueOf(iValue);
-            for (int i=0; i<sNumber.length();i++) {
+            for (int i = 0; i < sNumber.length(); i++) {
                 String sDigit = String.valueOf(sNumber.charAt(i));
 
                 showedList.add(numberList.get(Integer.valueOf(sDigit)));
@@ -96,7 +90,7 @@ public class NumbersPanel {
             iStoredValue += iValue;
             showedList.clear();
             String sNumber = String.valueOf(iStoredValue);
-            for (int i=0; i<sNumber.length();i++) {
+            for (int i = 0; i < sNumber.length(); i++) {
                 String sDigit = String.valueOf(sNumber.charAt(i));
 
                 showedList.add(numberList.get(Integer.valueOf(sDigit)));
@@ -106,7 +100,7 @@ public class NumbersPanel {
 
     //Método dispose. Para eliminar los recursos
     public void dispose() {
-        for ( Texture t : numberList) {
+        for (Texture t : numberList) {
             t.dispose();
         }
     }

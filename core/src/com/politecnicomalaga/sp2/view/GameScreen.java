@@ -34,9 +34,8 @@ public class GameScreen implements Screen {
         empire = new Battalion(stage);
 
         //We add the main player
-        heroShip = new PlayerSpaceShip();
+        heroShip = new PlayerSpaceShip(stage);
         heroShip.addListener(new InputListener() {
-
             public void clicked(InputEvent event, float x, float y, int pointer, int button) {
                 //return true;
             }
@@ -46,17 +45,17 @@ public class GameScreen implements Screen {
             }
 
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+
             }
 
             @Override
             public void touchDragged(InputEvent event, float x, float y, int pointer) {
                 //if (heroShip.getX()<event.getStageX() && heroShip.getX()+ SettingsManager.ALLY_WIDTH>event.getStageX() && heroShip.getY()<event.getStageY() && heroShip.getY()+SettingsManager.ALLY_HEIGHT>event.getStageY()){}
-                if (event.getStageX() > 0 && SettingsManager.SCREEN_WIDTH - SettingsManager.ALLY_WIDTH > event.getStageX()) {
+                if (event.getStageX() > 0 && 1024 - SettingsManager.ALLY_WIDTH > event.getStageX()) {
                     heroShip.setX(event.getStageX());
                 }
             }
         });
-
         heroShip.setTouchable(Touchable.enabled);
         stage.addActor(heroShip);
     }
@@ -64,9 +63,9 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         Gdx.app.log("MainScreen", "show");
+
     }
 
-    @Override
     public void render(float delta) {
         //jave 8
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -77,22 +76,27 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
+
     }
 
     @Override
     public void pause() {
+
     }
 
     @Override
     public void resume() {
+
     }
 
     @Override
     public void hide() {
+
     }
 
     @Override
     public void dispose() {
         stage.dispose();
     }
+
 }

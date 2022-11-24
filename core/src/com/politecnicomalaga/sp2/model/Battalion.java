@@ -5,8 +5,9 @@ import com.badlogic.gdx.utils.Array;
 import com.politecnicomalaga.sp2.managers.SettingsManager;
 
 public class Battalion {
-    private Array<Squadron> battalion;
-    private int posY, distanceBetweenSquadrons;
+    private final Array<Squadron> battalion;
+    private final int distanceBetweenSquadrons;
+    private int posY;
 
     public Battalion(Stage baseStage) {
         //Initiate the arraylist
@@ -21,4 +22,6 @@ public class Battalion {
             battalion.add(squadron);
         }
     }
+    //PosicionBatallon
+
 }
