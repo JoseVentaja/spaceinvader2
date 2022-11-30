@@ -4,16 +4,25 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.politecnicomalaga.sp2.managers.AssetsManager;
 import com.politecnicomalaga.sp2.managers.LanguageManager;
 import com.politecnicomalaga.sp2.managers.ScreensManager;
+import com.politecnicomalaga.sp2.model.Fondo;
+
+import javax.swing.ImageIcon;
+import javax.swing.text.Element;
+import javax.swing.text.html.ImageView;
 
 public class StartScreen implements Screen {
 
@@ -23,12 +32,14 @@ public class StartScreen implements Screen {
     public StartScreen(final Game aGame) {
         game = aGame;
         stage = new Stage(new ScreenViewport());
-//         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
-//         Skin skin=new Skin();
-//         skin.addRegions(atlas);
-//         TextureRegion tr=skin.get(AssetsManager.TITLE_LABEL,TextureRegion.class);
-//         TextButton.TextButtonStyle buttonStyle = skin.get("bigButton", TextButton.TextButtonStyle.class);
-//         TextButton button = new TextButton("Click me!", buttonStyle);
+        SpriteBatch sb=new SpriteBatch();
+        Fondo fondo=new Fondo(0,0);
+        stage.addActor(fondo);
+        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
+
+        //-------------------------------------------------------------------------------------------------------------------------//
+
+
 
 //-------------------------------------------------------------------------------------------------------------------------//
 
