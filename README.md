@@ -81,3 +81,23 @@ o------------------------------------o------------------------------------o-----
 - Javier Botella y Javier Frochoso: Musica
 
 - Alvaro Algarra: Pantallas
+
+# 25/11/2022
+- Desarrollando las balas y las colisiones
+
+- Creando las nuevas pantallas, la musica y los efectos de sonido
+
+# 26/11/2022
+- Descanso
+
+# 27/11/2022
+- Descanso
+
+# 28/11/2022
+- Se crea la clase SoundManager para gestionar los sonidos
+
+# 29/11/2022
+- Cada uno sigue con su parte
+
+# 30/11/2022
+- Se terminan las nuevas pantallas y se suben a la rama correspondiente
