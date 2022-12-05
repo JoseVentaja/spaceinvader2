@@ -30,6 +30,11 @@ public class GameScreen implements Screen {
 
 
     public GameScreen(Game aGame) {
+        
+        Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("data/sounds/gamemusic.ogg"));
+        menuMusic.setLooping(true);
+        menuMusic.play();
+        
         game = aGame;
 
         stage = new Stage(new ScreenViewport());
