@@ -25,6 +25,11 @@ public class GameScreen implements Screen {
     private final PlayerSpaceShip heroShip;
 
     public GameScreen(Game aGame) {
+        
+        Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("data/sounds/gamemusic.ogg"));
+        menuMusic.setLooping(true);
+        menuMusic.play();
+        
         game = aGame;
         stage = new Stage(new ScreenViewport());
         //Esta orden se puede poner también en el show()
