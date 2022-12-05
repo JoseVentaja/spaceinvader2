@@ -13,14 +13,25 @@ import com.politecnicomalaga.sp2.managers.SettingsManager;
 public class Bullet extends Actor {
 
     private final Animation<TextureRegion> skin;
+    private boolean ally;
 
-    public Bullet(float positionX, float positionY) {
+    public Bullet(float positionX, float positionY, boolean ally) {
         super();
+        this.ally = ally;
+
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
-        skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.ALLY_SHOT), Animation.PlayMode.LOOP);
+        if(ally){
+            skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.ALLY_SHOT), Animation.PlayMode.LOOP);
+        }else{
+            skin = new Animation<TextureRegion>(0.25f, atlas.findRegions(AssetsManager.ENEMY_SHOT), Animation.PlayMode.LOOP);
+        }
+
         this.setBounds(0, 0, SettingsManager.sizeBulletWIDTH, SettingsManager.sizeBulletHEIGHT);
         this.setX(positionX);
         this.setY(positionY);
+    }
+    public boolean getAlly(){
+        return ally;
     }
 
     @Override
@@ -30,8 +41,15 @@ public class Bullet extends Actor {
         float x = getX() + SettingsManager.ALLY_CENTER - SettingsManager.allyBulletCenter;
         float y = getY() + SettingsManager.ALLY_HEIGHT;
         if (getY() < SettingsManager.SCREEN_HEIGHT) {
-            this.setY(getY() + SettingsManager.speedBullet);
-            batch.draw(currentFrame, x, y, SettingsManager.sizeBulletWIDTH, SettingsManager.sizeBulletHEIGHT);
+            if(this.getAlly()){
+                this.setY(getY() + SettingsManager.speedBullet);
+                batch.draw(currentFrame, x, y, SettingsManager.sizeBulletWIDTH, SettingsManager.sizeBulletHEIGHT);
+            }else{
+                this.setY(getY() - SettingsManager.speedBulletEnemy);
+                batch.draw(currentFrame, x, y, SettingsManager.sizeBulletWIDTH, SettingsManager.sizeBulletHEIGHT);
+            }
+
         }
     }
+
 }

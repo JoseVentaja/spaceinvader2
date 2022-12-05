@@ -15,9 +15,11 @@ public class EnemyShip extends Actor {
 
     private final Animation<TextureRegion> skin;
     private final ShootManager shooters = ShootManager.getSingleton();
+    public Squadron squadron;
 
-    public EnemyShip() {
+    public EnemyShip(Squadron troops) {
         super();
+        this.squadron=troops;
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
         skin = new Animation<TextureRegion>(SettingsManager.ENEMY_SPEED, atlas.findRegions(AssetsManager.ENEMY_SPRITES), Animation.PlayMode.LOOP);
         this.setBounds(0, 0, SettingsManager.ENEMY_WIDTH, SettingsManager.ENEMY_HEIGHT);
@@ -26,6 +28,7 @@ public class EnemyShip extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
+        squadron.RandomShoot();
         for (int i = 0; i < shooters.getListBullet().size(); i++) {
             if (this.getX() + SettingsManager.ENEMY_CENTER >= shooters.getListBullet().get(i).getX() && this.getX() - SettingsManager.ENEMY_CENTER <= shooters.getListBullet().get(i).getX()) {
                 if (this.getY() - SettingsManager.ALLY_HEIGHT <= shooters.getListBullet().get(i).getY()) {
