@@ -21,6 +21,7 @@ public class AssetsManager {
     public static final String NOMBRE4 = "JOSE VENTAJA ANDRADE";
     public static final String NOMBRE5 = "LEANDRO PAGANO MARQUEZ";
     public static final String BIG_FONT = "big-black";
+    public static final String FONDO = "fondo.jpg";
     private static Skin textSkin;
 
     public static Skin getTextSkin() {

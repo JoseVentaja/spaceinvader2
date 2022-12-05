@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.politecnicomalaga.sp2.managers.AssetsManager;
 import com.politecnicomalaga.sp2.managers.LanguageManager;
 import com.politecnicomalaga.sp2.managers.ScreensManager;
+import com.politecnicomalaga.sp2.model.Fondo;
 
 import sun.net.ResourceManager;
 
@@ -28,6 +29,8 @@ public class SettingsScreen implements Screen {
         game = aGame;
 
         stage = new Stage(new ScreenViewport());
+        Fondo fondo=new Fondo(0,0);
+        stage.addActor(fondo);
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(AssetsManager.ATLAS_FILE));
         Gdx.input.setInputProcessor(stage);
 
