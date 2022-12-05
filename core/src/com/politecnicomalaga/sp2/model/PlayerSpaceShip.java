@@ -18,6 +18,7 @@ public class PlayerSpaceShip extends Actor {
     private final Stage baseStage;
     private final ShootManager Shooters;
     private float shootTime = 0;
+    private final ShootManager shooters = ShootManager.getSingleton();
 
     public PlayerSpaceShip(Stage baseStage) {
         super();
@@ -35,10 +36,19 @@ public class PlayerSpaceShip extends Actor {
         super.draw(batch, parentAlpha);
         TextureRegion currentFrame = skin.getKeyFrame(GameManager.getSingleton().getGameTime(), true);
         batch.draw(currentFrame, getX(), getY(), SettingsManager.ALLY_WIDTH, SettingsManager.ALLY_HEIGHT);
+        for (int i = 0; i < shooters.getListBulletEnemy().size(); i++) {
+            if (this.getY() > shooters.getListBulletEnemy().get(i).getY()&&this.getY()-SettingsManager.ALLY_HEIGHT < shooters.getListBulletEnemy().get(i).getY()) {
+                if (this.getX() + SettingsManager.ALLY_CENTER >= shooters.getListBulletEnemy().get(i).getX() && this.getX() - SettingsManager.ALLY_CENTER <= shooters.getListBulletEnemy().get(i).getX()) {
+                    this.setVisible(false);
+                    shooters.deadShootEnemy(shooters.getListBulletEnemy().get(i), i);
+
+                }
+            }
+        }
         shootTime += 1;
         if (shootTime >= SettingsManager.tiempoEntreDisparos) {
             shootTime -= SettingsManager.tiempoEntreDisparos;
-            baseStage.addActor(Shooters.shootCreate(getX(), getY()));
+            baseStage.addActor(Shooters.shootCreate(getX(), getY(),true));
         }
     }
 }
