@@ -30,5 +30,7 @@ public class SettingsManager {
     public static final short sizeBulletHEIGHT = 20;
     public static final short allyBulletCenter = 5;
     public static final float tiempoEntreDisparos = 25f;
+    public static final float tiempoEntreDisparosEnemy = 400f;
     public static final float speedBullet = 10f;
+    public static final float speedBulletEnemy = 10f;
 }
