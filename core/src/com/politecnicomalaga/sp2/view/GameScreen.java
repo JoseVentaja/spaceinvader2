@@ -3,6 +3,7 @@ package com.politecnicomalaga.sp2.view;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -23,12 +24,12 @@ public class GameScreen implements Screen {
     private final Game game;
     private final Battalion empire;
     private final PlayerSpaceShip heroShip;
+    private final Music menuMusic;
+
 
     public GameScreen(Game aGame) {
-        
-        Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("data/sounds/gamemusic.ogg"));
-        menuMusic.setLooping(true);
-        menuMusic.play();
+
+
         
         game = aGame;
         stage = new Stage(new ScreenViewport());
@@ -63,16 +64,23 @@ public class GameScreen implements Screen {
         });
         heroShip.setTouchable(Touchable.enabled);
         stage.addActor(heroShip);
+        menuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/gamemusic.ogg"));
+        menuMusic.setLooping(true);
+        menuMusic.play();
     }
+
+
 
     @Override
     public void show() {
         Gdx.app.log("MainScreen", "show");
 
+
     }
 
     public void render(float delta) {
         //jave 8
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
