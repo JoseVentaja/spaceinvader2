@@ -3,6 +3,7 @@ package com.politecnicomalaga.sp2.view;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -27,13 +28,13 @@ public class GameScreen implements Screen {
     private final Game game;
     private final Battalion empire;
     private final PlayerSpaceShip heroShip;
+    private final Music menuMusic;
+
 
 
     public GameScreen(Game aGame) {
-        
-        Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("data/sounds/gamemusic.ogg"));
-        menuMusic.setLooping(true);
-        menuMusic.play();
+
+
         
         game = aGame;
 
@@ -73,13 +74,19 @@ public class GameScreen implements Screen {
         heroShip.setTouchable(Touchable.enabled);
 
         stage.addActor(heroShip);
+        menuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/gamemusic.ogg"));
+        menuMusic.setLooping(true);
+        menuMusic.play();
     }
+
+
 
     @Override
     public void show() {
 
 
         Gdx.app.log("MainScreen", "show");
+
 
     }
 
