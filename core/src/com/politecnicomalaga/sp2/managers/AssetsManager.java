@@ -10,7 +10,7 @@ public class AssetsManager {
     public static final String SPACESHIP_SPRITES = "player";
     public static final String ENEMY_SPRITES = "enemy";
     public static final String ALLY_SHOT = "disparo_aliado";
-    public static final String ENEMY_SHOT = "enemy_shot";
+    public static final String ENEMY_SHOT = "disparo_enemigo";
     public static final String EXPLOSION_SPRITES = "explosion";
     public static final String BUTTON = "button";
     public static final String TITLE_LABEL = "SPACE-INVADER";

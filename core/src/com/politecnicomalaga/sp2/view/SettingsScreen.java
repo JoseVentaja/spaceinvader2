@@ -16,13 +16,14 @@ import com.politecnicomalaga.sp2.managers.AssetsManager;
 import com.politecnicomalaga.sp2.managers.LanguageManager;
 import com.politecnicomalaga.sp2.managers.ScreensManager;
 import com.politecnicomalaga.sp2.model.Fondo;
+import com.politecnicomalaga.sp2.model.PlayerSpaceShip;
 
 import sun.net.ResourceManager;
 
 public class SettingsScreen implements Screen {
     private final Stage stage;
     private final Game game;
-
+    private PlayerSpaceShip naveAlidada;
     private ResourceManager rm;
 
     public SettingsScreen(final Game aGame) {
@@ -100,6 +101,7 @@ public class SettingsScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
+
         stage.draw();
     }
 
