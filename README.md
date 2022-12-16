@@ -101,3 +101,6 @@ o------------------------------------o------------------------------------o-----
 
 # 30/11/2022
 - Se terminan las nuevas pantallas y se suben a la rama correspondiente
+# 16/12/2022
+-Solución de la música de juego.
+-Problema en cuánto a tiempo , ya que, tenemos hecho el fondo del juego y algunos ajustes más pero no los hemos podido poner en común e implementar.
